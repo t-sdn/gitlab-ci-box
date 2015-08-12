@@ -13,3 +13,4 @@ run DEBIAN_FRONTEND=noninteractive apt-get -qq install git curl wget openjdk-7-j
 
 run curl -sSL http://archive.apache.org/dist/maven/maven-3/3.3.1/binaries/apache-maven-3.3.1-bin.tar.gz | tar -C /opt/ -xzf - && ln -sf /opt/apache-maven-3.3.1/bin/mvn /usr/bin/mvn
 run echo "MAVEN_OPTS='-Xmx1048m -XX:MaxPermSize=1024m -Dmaven.repo.local=/cache/m2'" >> /etc/environment
+run mkdir -p ~/.m2/ && ln -sf /cache/m2 ~/.m2/repository
